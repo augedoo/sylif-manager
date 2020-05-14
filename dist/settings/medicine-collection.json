@@ -1,0 +1,54 @@
+[
+  {
+    "medicine-name": "Garlic",
+    "price": 20
+  },
+  {
+    "medicine-name": "Heptovit",
+    "price": 60
+  },
+  {
+    "medicine-name": "Somavit",
+    "price": 75
+  },
+  {
+    "medicine-name": "Re-Cell",
+    "price": 100
+  },
+  {
+    "medicine-name": "Gynova",
+    "price": 75
+  },
+  {
+    "medicine-name": "Liva Prostak",
+    "price": 145
+  },
+  {
+    "medicine-name": "Aqua Salveo",
+    "price": 150
+  },
+  {
+    "medicine-name": "Cleanshield",
+    "price": 90
+  },
+  {
+    "medicine-name": "Prostate Tea",
+    "price": 45
+  },
+  {
+    "medicine-name": "Calcium (India)",
+    "price": 15
+  },
+  {
+    "medicine-name": "Calcium (UK)",
+    "price": 35
+  },
+  {
+    "medicine-name": "Artovastatin (20mg)",
+    "price": 45
+  },
+  {
+    "medicine-name": "Naproxen EC",
+    "price": 60
+  }
+]

@@ -1,0 +1,874 @@
+$primary: #18b495;
+$primary-dark: #0c5a4a;
+$primary-light: #4be7c8;
+$secondary: #56717a;
+$secondary-dark: #496069;
+$secondary-light: #65828f;
+$dark-light: #37465b;
+$dark: #263448;
+$green: #52be80;
+$black: #111111;
+$medium: #d4d4d4;
+$light: #f6f8f9;
+$white: #ffffff;
+
+@import "toggle-switch";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f7fb;
+  background: $white;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  color: $dark-light;
+}
+
+h1,
+h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: $dark;
+}
+
+.container {
+  margin: auto;
+  width: 90%;
+}
+
+.btn {
+  border: none;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: $white;
+  border: 2px solid $primary;
+  transition: 0.4s 0.1s;
+
+  svg {
+    fill: $white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  #main-sidebar {
+    max-width: 250px;
+    width: 100%;
+    background: $secondary;
+    transition: 0.5s;
+
+    .branding {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 17vh;
+      width: 100%;
+      background: $secondary-dark;
+
+      h1 {
+        color: $white;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        transition: 0.5s;
+
+        .primary-text {
+          color: $light;
+          font-size: 1.15rem;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding-top: 1.5rem;
+      list-style: none;
+
+      .current {
+        background-color: $secondary-light;
+
+        .icon {
+          span {
+            color: $primary;
+          }
+        }
+      }
+
+      li {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      a {
+        width: 95%;
+        padding: 0.5rem;
+        margin: 0.25rem 0;
+        border-radius: 25px 0 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 2rem;
+        color: $white;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        font-size: 0.9rem;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: $secondary-light;
+        }
+      }
+
+      .icon {
+        margin-right: 0.5rem;
+
+        * {
+          font-size: 1.5rem;
+          transition: 0.5s;
+        }
+      }
+    }
+
+    &.main-sidebar-collapsed {
+      max-width: 100px;
+
+      .branding {
+        h1 {
+          font-size: 1.25rem;
+          overflow-wrap: break-word;
+          display: block;
+          text-align: center;
+
+          .primary-text {
+            font-size: 1rem;
+            padding: 0;
+          }
+        }
+      }
+
+      ul {
+        a > span {
+          display: none;
+        }
+
+        .icon span {
+          font-size: 2rem;
+        }
+      }
+
+      & + main {
+        max-width: calc(100vw - 100px);
+        width: calc(100vw - 100px);
+      }
+    }
+  }
+
+  main {
+    max-width: calc(100vw - 250px);
+    width: calc(100vw - 250px);
+    transition: 0.5s;
+
+    /* Nain Header */
+    #main-header {
+      background: $white;
+      background: #f8f8f8;
+      height: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+      .wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        .hamburger {
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
+          background: #eef0ef;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            path {
+              fill: $primary;
+            }
+          }
+        }
+
+        .buttons {
+          text-align: right;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          .add-record-btn {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            background: $primary;
+            border-color: $primary;
+            transition: 0.5s;
+            margin-left: 0;
+            text-transform: capitalize;
+            border-radius: 5px;
+
+            svg {
+              margin-right: 0.5rem;
+              fill: $white;
+              transition: 0.5s;
+              height: 15px;
+              width: 15px;
+            }
+
+            &:hover {
+              background: $primary-dark;
+              border-color: $primary-dark;
+            }
+          }
+        }
+      }
+    }
+
+    #main-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      height: 90vh;
+      position: relative;
+      width: 100%;
+
+      // max-width: calc(100vw - 250px);
+      // width: calc(100vw - 250px);
+      #main-content {
+        overflow-y: auto;
+
+        #top-panel {
+          padding: 2rem;
+          .page-title {
+            padding-bottom: 2rem;
+
+            h2 {
+              font-weight: 900;
+              font-family: "Lato";
+              color: $dark-light;
+              // color: lighten($color: #000000, $amount: 40);
+              letter-spacing: 3px;
+              font-family: "Lato", sans-serif;
+              text-transform: uppercase;
+              font-size: 1.05rem;
+            }
+          }
+
+          .search-filter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          .search {
+            height: 2.5rem;
+            width: 30%;
+            overflow: hidden;
+            position: relative;
+
+            input {
+              width: 100%;
+              height: 100%;
+              padding: 0.5rem 3rem 0.5rem 1rem;
+              border-radius: 5px;
+              border: 1px #eceef3 solid;
+              transition: 0.5s;
+              font-size: 0.85rem;
+              color: $dark-light;
+              letter-spacing: 1.5px;
+
+              &:hover,
+              &:focus {
+                border-color: lighten($color: $primary, $amount: 20);
+
+                & ~ .search-icon {
+                  border: 1px solid;
+                  border-color: $primary-light $primary-light $primary-light
+                    transparent;
+
+                  svg {
+                    fill: $primary-light;
+                  }
+                }
+              }
+
+              &:focus {
+                outline: none;
+                border-color: $primary;
+              }
+
+              &::placeholder {
+                font-size: 0.75rem;
+                font-weight: 400;
+
+                color: darken($color: $medium, $amount: 20);
+                letter-spacing: 2px;
+              }
+
+              &:-webkit-autofill,
+              &:-webkit-autofill:hover,
+              &:-webkit-autofill:focus,
+              &:-webkit-autofill:active {
+                transition: background-color 5000s ease-in-out 0s;
+                -webkit-text-fill-color: $dark-light !important;
+              }
+            }
+
+            &-icon {
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 2.5rem;
+              width: 3rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #000;
+              text-align: center;
+              transition: 0.5s;
+              border-radius: 0 5px 5px 0;
+              background: lighten($color: $light, $amount: 5);
+              border: 1px #eceef3 solid;
+
+              &:hover {
+                background: $primary-light;
+                border: 1px solid;
+                border-color: $primary-light $primary-light $primary-light
+                  transparent;
+                svg {
+                  fill: $light !important;
+                }
+              }
+
+              svg {
+                height: 18px;
+                width: 18px;
+                fill: $primary-light;
+                transition: 0.5s;
+              }
+            }
+          }
+
+          .filter {
+            height: 2.5rem;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            background: $white;
+
+            label {
+              height: 100%;
+              display: inline-block;
+              color: $dark-light;
+              font-size: inherit;
+              border: solid 1px $medium;
+              padding: 0.27rem 0.5rem;
+              display: flex;
+              align-items: center;
+              border-radius: 5px 0 0 5px;
+            }
+
+            select {
+              color: $dark-light;
+              height: 100%;
+              outline: none;
+              background-color: transparent;
+              font-size: inherit;
+              border: solid 1px $medium;
+              padding: 0.23rem 0.5rem;
+              transform: translateX(-1px);
+              border-radius: 0 5px 5px 0;
+            }
+          }
+        }
+
+        .seperator {
+          height: 5px;
+          // margin: 1 rem 0;
+          background: $light;
+        }
+
+        #patients-list {
+          padding: 2rem 2rem;
+          background: $white;
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+            background-color: $light;
+
+            thead {
+              background-color: #f3f4f6;
+
+              tr {
+                height: 43px;
+                background: none;
+                margin: 0;
+
+                td {
+                  text-transform: uppercase;
+                  font-size: 0.7rem;
+                  font-weight: 900;
+                  letter-spacing: 1.2px;
+                  color: #949596;
+                }
+              }
+            }
+
+            tr {
+              min-height: 43px;
+              min-height: auto;
+              font-size: 0.9rem;
+              background: $white;
+              padding: 0.25rem 1rem;
+              display: grid;
+              grid-template-columns: 1fr 2fr 1fr 3fr 1fr 1fr 1fr;
+              align-items: center;
+              justify-content: center;
+              margin: 0.25rem 0;
+              position: relative;
+
+              &:last-child {
+                border-bottom: none;
+              }
+
+              &.owing-row {
+                &::before {
+                  content: "";
+                  background-color: #da6568;
+                  width: 3px;
+                  height: 100%;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  z-index: 2;
+                }
+              }
+              &.dept-free-row {
+                &::before {
+                  content: "";
+                  background-color: #62cdbb;
+                  width: 3px;
+                  height: 100%;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  z-index: 2;
+                }
+              }
+
+              td {
+                padding: 0 1rem 0 0;
+                text-transform: capitalize;
+
+                &:last-child {
+                  text-align: center;
+                  padding-right: 0rem;
+                }
+
+                // Date
+                &.date {
+                  white-space: nowrap;
+                }
+
+                // Name
+                &.name {
+                  text-transform: capitalize;
+                }
+
+                // Medicine list
+                &.medicines {
+                  ul {
+                    padding: 0.5rem 0rem;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(60px, auto));
+                    gap: 0.25rem;
+                    width: 100%;
+                    list-style: none;
+
+                    li {
+                      text-align: center;
+                      background: $light;
+                      border: solid 1px $light;
+                      border-radius: 5px;
+                      padding: 0.15rem 0.2rem;
+                      font-size: 0.75rem;
+                      overflow: hidden;
+                      text-transform: capitalize;
+
+                      white-space: nowrap;
+
+                      .item-state {
+                        color: $green;
+                      }
+
+                      .item-name {
+                        margin-left: 1px;
+                      }
+                    }
+                  }
+                }
+
+                // Total amount
+                &.amount,
+                &.dept {
+                  font-size: 0.75rem;
+                  white-space: nowrap;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  text-align: center;
+
+                  .price,
+                  .amount {
+                    margin-left: 0.25rem;
+                    font-size: 0.85rem;
+                  }
+                }
+
+                // Action buttons
+                &.action {
+                  ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    list-style: none;
+                    width: 100%;
+
+                    li * {
+                      cursor: pointer;
+                      padding: 0.15rem;
+                      font-size: 1.25rem;
+                      border-radius: 0.35rem;
+                      color: $secondary-dark !important;
+                    }
+
+                    li .edit-patient-record {
+                      margin-right: 0.5rem;
+                      background-color: #f4b84e;
+                    }
+
+                    li .delete-patient-record {
+                      background-color: #da6568;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        /* Scrollbar */
+        &::-webkit {
+          &-scrollbar {
+            width: 10px;
+          }
+
+          /* Track */
+          &-scrollbar-track {
+            background: $medium;
+          }
+
+          /* Handle */
+          &-scrollbar-thumb {
+            background: lighten($color: $secondary, $amount: 25);
+            transition: 0.5;
+          }
+
+          /* Handle on hover */
+          &-scrollbar-thumb:hover {
+            background: lighten($color: $secondary, $amount: 10);
+          }
+        }
+      }
+
+      // Add New Patient Sidebar
+      #add-patient-sidebar {
+        height: 100%;
+        width: 400px;
+        box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
+        color: $dark-light;
+        position: absolute;
+        top: 0;
+        right: -400px;
+        // right: 0px;
+        transition: 0.75s;
+        background: darken($color: $white, $amount: 1);
+        background: $white;
+        overflow: auto;
+        z-index: 99;
+
+        &-wrapper {
+          position: relative;
+          height: 100%;
+          padding: 1rem 1.5rem;
+        }
+
+        form {
+          padding-bottom: 100px;
+        }
+
+        .close-sidebar {
+          transform: rotate(45deg);
+          fill: red;
+          cursor: pointer;
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+        }
+
+        h2 {
+          margin-bottom: 1.2rem;
+          font-size: 1rem;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: lighten($color: $dark, $amount: 20);
+        }
+
+        .form-group {
+          padding: 0.25rem 0;
+        }
+
+        label {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 0.25rem;
+          font-weight: 700;
+          text-transform: capitalize;
+          font-size: 0.75rem;
+          color: lighten($color: $dark, $amount: 10);
+          text-transform: uppercase;
+        }
+
+        input,
+        select {
+          border: solid 2px $medium;
+          padding: 0.5rem 1rem;
+          margin: 0.25rem 0;
+          background: $white;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+          color: $dark-light;
+          width: 100%;
+          transition: 0.5s;
+
+          &:hover {
+            border-color: lighten($color: $primary, $amount: 20);
+          }
+
+          &:focus {
+            outline: none;
+            border-color: $primary;
+          }
+
+          &::placeholder {
+            font-size: 0.75rem;
+            color: darken($color: $medium, $amount: 20);
+          }
+
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: $dark-light !important;
+          }
+
+          /* Hide arrow in price input field*/
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            -moz-appearance: textfield;
+          }
+        }
+
+        .amount-owing {
+          display: flex;
+          margin-top: 0.25rem;
+          align-items: center;
+
+          #dept-amount {
+            max-width: 0px;
+            margin-left: 0.75rem;
+            opacity: 0;
+          }
+
+          .switch ~ #dept-amount.shown {
+            max-width: 90px;
+            opacity: 1;
+          }
+        }
+
+        .select-med-panel {
+          display: grid;
+          grid-template-columns: 6fr 2fr 2fr;
+          grid-gap: 0.5rem;
+          align-items: end;
+
+          * {
+            margin-bottom: 0;
+          }
+
+          #price {
+            padding: 0.5rem 0.25rem;
+            font-size: 0.85rem;
+          }
+
+          .add-med-btn button {
+            align-self: flex-end;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background: $secondary-light;
+            color: $white;
+            border-color: $secondary-light;
+            font-weight: 500;
+
+            &:hover {
+              background: $secondary;
+              border-color: $secondary;
+            }
+
+            &:focus {
+              background: $secondary;
+              border-color: $secondary;
+            }
+          }
+        }
+        .selected-med-title {
+          padding-top: 0.75rem;
+        }
+
+        ul.selected-medicine {
+          padding-top: 0.5rem;
+          max-height: 400px;
+          overflow-y: auto;
+
+          li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: solid $medium 1px;
+            padding: 0.15rem 0.5rem 0.15rem 1rem;
+            margin-top: -1px;
+
+            div {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 20%;
+              font-size: 1.2rem;
+              padding: 0;
+            }
+
+            .is-med-purchased {
+              outline: $primary;
+              width: 20px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+
+            .delete-med-btn {
+              font-size: 0.85rem;
+              color: red;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .total-cost {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 100px;
+          overflow: hidden;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem 2rem;
+          background: darken($color: $primary-light, $amount: 10);
+          background: linear-gradient(
+            136deg,
+            $secondary 0%,
+            $secondary-dark 100%
+          );
+
+          div {
+            padding: 0rem 2rem;
+            background: $medium;
+            color: $dark;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: center;
+          }
+
+          #submit-btn {
+            background: $primary;
+            color: $light;
+            border: none;
+            font-weight: 500;
+            transition: 0.5s;
+            text-align: center;
+
+            &:hover {
+              background: $primary-dark;
+            }
+          }
+
+          #submit-btn.update-patient-record {
+            background-color: orange !important;
+          }
+        }
+      }
+    }
+  }
+}

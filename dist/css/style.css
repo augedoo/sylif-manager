@@ -1,0 +1,1101 @@
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: solid 2px #ccc;
+}
+
+.slider:before {
+  content: "No Debt";
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: capitalize;
+  font-size: 11px;
+  position: absolute;
+  height: 16.1px;
+  width: 48px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: #ffffff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked ~ .slider {
+  background-color: #4be7c8;
+}
+
+input:focus ~ .slider {
+  border-color: #4be7c8;
+}
+
+input:hover ~ .slider {
+  border-color: #4be7c8;
+  background-color: #4be7c8;
+}
+
+input:checked ~ .slider:before {
+  content: "Owing";
+  -webkit-transform: translateX(48px);
+  transform: translateX(48px);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #f5f7fb;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  color: #37465b;
+}
+
+h1,
+h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #263448;
+}
+
+.container {
+  margin: auto;
+  width: 90%;
+}
+
+.btn {
+  border: none;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #18b495;
+  -webkit-transition: 0.4s 0.1s;
+  transition: 0.4s 0.1s;
+}
+
+.btn svg {
+  fill: #ffffff;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#app #main-sidebar {
+  max-width: 250px;
+  width: 100%;
+  background: #56717a;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app #main-sidebar .branding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 17vh;
+  width: 100%;
+  background: #496069;
+}
+
+#app #main-sidebar .branding h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app #main-sidebar .branding h1 .primary-text {
+  color: #f6f8f9;
+  font-size: 1.15rem;
+  padding-left: 0.5rem;
+}
+
+#app #main-sidebar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 1.5rem;
+  list-style: none;
+}
+
+#app #main-sidebar ul .current {
+  background-color: #65828f;
+}
+
+#app #main-sidebar ul .current .icon span {
+  color: #18b495;
+}
+
+#app #main-sidebar ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#app #main-sidebar ul a {
+  width: 95%;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border-radius: 25px 0 0 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 2rem;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app #main-sidebar ul a:hover {
+  background-color: #65828f;
+}
+
+#app #main-sidebar ul .icon {
+  margin-right: 0.5rem;
+}
+
+#app #main-sidebar ul .icon * {
+  font-size: 1.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app #main-sidebar.main-sidebar-collapsed {
+  max-width: 100px;
+}
+
+#app #main-sidebar.main-sidebar-collapsed .branding h1 {
+  font-size: 1.25rem;
+  overflow-wrap: break-word;
+  display: block;
+  text-align: center;
+}
+
+#app #main-sidebar.main-sidebar-collapsed .branding h1 .primary-text {
+  font-size: 1rem;
+  padding: 0;
+}
+
+#app #main-sidebar.main-sidebar-collapsed ul a > span {
+  display: none;
+}
+
+#app #main-sidebar.main-sidebar-collapsed ul .icon span {
+  font-size: 2rem;
+}
+
+#app #main-sidebar.main-sidebar-collapsed + main {
+  max-width: calc(100vw - 100px);
+  width: calc(100vw - 100px);
+}
+
+#app main {
+  max-width: calc(100vw - 250px);
+  width: calc(100vw - 250px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* Nain Header */
+}
+
+#app main #main-header {
+  background: #ffffff;
+  background: #f8f8f8;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#app main #main-header .wrapper {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 2rem;
+}
+
+#app main #main-header .wrapper .hamburger {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: #eef0ef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main #main-header .wrapper .hamburger svg path {
+  fill: #18b495;
+}
+
+#app main #main-header .wrapper .buttons {
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#app main #main-header .wrapper .buttons .add-record-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  background: #18b495;
+  border-color: #18b495;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-left: 0;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+#app main #main-header .wrapper .buttons .add-record-btn svg {
+  margin-right: 0.5rem;
+  fill: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  height: 15px;
+  width: 15px;
+}
+
+#app main #main-header .wrapper .buttons .add-record-btn:hover {
+  background: #0c5a4a;
+  border-color: #0c5a4a;
+}
+
+#app main #main-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  height: 90vh;
+  position: relative;
+  width: 100%;
+}
+
+#app main #main-wrapper #main-content {
+  overflow-y: auto;
+  /* Scrollbar */
+}
+
+#app main #main-wrapper #main-content #top-panel {
+  padding: 2rem;
+}
+
+#app main #main-wrapper #main-content #top-panel .page-title {
+  padding-bottom: 2rem;
+}
+
+#app main #main-wrapper #main-content #top-panel .page-title h2 {
+  font-weight: 900;
+  font-family: "Lato";
+  color: #37465b;
+  letter-spacing: 3px;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+#app main #main-wrapper #main-content #top-panel .search-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#app main #main-wrapper #main-content #top-panel .search {
+  height: 2.5rem;
+  width: 30%;
+  overflow: hidden;
+  position: relative;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px #eceef3 solid;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 0.85rem;
+  color: #37465b;
+  letter-spacing: 1.5px;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input:hover, #app main #main-wrapper #main-content #top-panel .search input:focus {
+  border-color: #4be7c8;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input:hover ~ .search-icon, #app main #main-wrapper #main-content #top-panel .search input:focus ~ .search-icon {
+  border: 1px solid;
+  border-color: #4be7c8 #4be7c8 #4be7c8 transparent;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input:hover ~ .search-icon svg, #app main #main-wrapper #main-content #top-panel .search input:focus ~ .search-icon svg {
+  fill: #4be7c8;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input:focus {
+  outline: none;
+  border-color: #18b495;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input::-webkit-input-placeholder {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a1a1a1;
+  letter-spacing: 2px;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input:-ms-input-placeholder {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a1a1a1;
+  letter-spacing: 2px;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input::-ms-input-placeholder {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a1a1a1;
+  letter-spacing: 2px;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input::placeholder {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a1a1a1;
+  letter-spacing: 2px;
+}
+
+#app main #main-wrapper #main-content #top-panel .search input:-webkit-autofill, #app main #main-wrapper #main-content #top-panel .search input:-webkit-autofill:hover, #app main #main-wrapper #main-content #top-panel .search input:-webkit-autofill:focus, #app main #main-wrapper #main-content #top-panel .search input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #37465b !important;
+}
+
+#app main #main-wrapper #main-content #top-panel .search-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 2.5rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #000;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 0 5px 5px 0;
+  background: white;
+  border: 1px #eceef3 solid;
+}
+
+#app main #main-wrapper #main-content #top-panel .search-icon:hover {
+  background: #4be7c8;
+  border: 1px solid;
+  border-color: #4be7c8 #4be7c8 #4be7c8 transparent;
+}
+
+#app main #main-wrapper #main-content #top-panel .search-icon:hover svg {
+  fill: #f6f8f9 !important;
+}
+
+#app main #main-wrapper #main-content #top-panel .search-icon svg {
+  height: 18px;
+  width: 18px;
+  fill: #4be7c8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app main #main-wrapper #main-content #top-panel .filter {
+  height: 2.5rem;
+  font-size: 0.85rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background: #ffffff;
+}
+
+#app main #main-wrapper #main-content #top-panel .filter label {
+  height: 100%;
+  display: inline-block;
+  color: #37465b;
+  font-size: inherit;
+  border: solid 1px #d4d4d4;
+  padding: 0.27rem 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px 0 0 5px;
+}
+
+#app main #main-wrapper #main-content #top-panel .filter select {
+  color: #37465b;
+  height: 100%;
+  outline: none;
+  background-color: transparent;
+  font-size: inherit;
+  border: solid 1px #d4d4d4;
+  padding: 0.23rem 0.5rem;
+  -webkit-transform: translateX(-1px);
+          transform: translateX(-1px);
+  border-radius: 0 5px 5px 0;
+}
+
+#app main #main-wrapper #main-content .seperator {
+  height: 5px;
+  background: #f6f8f9;
+}
+
+#app main #main-wrapper #main-content #patients-list {
+  padding: 2rem 2rem;
+  background: #ffffff;
+}
+
+#app main #main-wrapper #main-content #patients-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #f6f8f9;
+}
+
+#app main #main-wrapper #main-content #patients-list table thead {
+  background-color: #f3f4f6;
+}
+
+#app main #main-wrapper #main-content #patients-list table thead tr {
+  height: 43px;
+  background: none;
+  margin: 0;
+}
+
+#app main #main-wrapper #main-content #patients-list table thead tr td {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: #949596;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr {
+  min-height: 43px;
+  min-height: auto;
+  font-size: 0.9rem;
+  background: #ffffff;
+  padding: 0.25rem 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr 3fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr 3fr 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.25rem 0;
+  position: relative;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr:last-child {
+  border-bottom: none;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr.owing-row::before {
+  content: "";
+  background-color: #da6568;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr.dept-free-row::before {
+  content: "";
+  background-color: #62cdbb;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td {
+  padding: 0 1rem 0 0;
+  text-transform: capitalize;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td:last-child {
+  text-align: center;
+  padding-right: 0rem;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.date {
+  white-space: nowrap;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.name {
+  text-transform: capitalize;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.medicines ul {
+  padding: 0.5rem 0rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(60px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(60px, auto));
+  gap: 0.25rem;
+  width: 100%;
+  list-style: none;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.medicines ul li {
+  text-align: center;
+  background: #f6f8f9;
+  border: solid 1px #f6f8f9;
+  border-radius: 5px;
+  padding: 0.15rem 0.2rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.medicines ul li .item-state {
+  color: #52be80;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.medicines ul li .item-name {
+  margin-left: 1px;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.amount, #app main #main-wrapper #main-content #patients-list table tr td.dept {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: center;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.amount .price,
+#app main #main-wrapper #main-content #patients-list table tr td.amount .amount, #app main #main-wrapper #main-content #patients-list table tr td.dept .price,
+#app main #main-wrapper #main-content #patients-list table tr td.dept .amount {
+  margin-left: 0.25rem;
+  font-size: 0.85rem;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.action ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  width: 100%;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.action ul li * {
+  cursor: pointer;
+  padding: 0.15rem;
+  font-size: 1.25rem;
+  border-radius: 0.35rem;
+  color: #496069 !important;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.action ul li .edit-patient-record {
+  margin-right: 0.5rem;
+  background-color: #f4b84e;
+}
+
+#app main #main-wrapper #main-content #patients-list table tr td.action ul li .delete-patient-record {
+  background-color: #da6568;
+}
+
+#app main #main-wrapper #main-content::-webkit {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+#app main #main-wrapper #main-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+#app main #main-wrapper #main-content::-webkit-scrollbar-track {
+  background: #d4d4d4;
+}
+
+#app main #main-wrapper #main-content::-webkit-scrollbar-thumb {
+  background: #99afb7;
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+#app main #main-wrapper #main-content::-webkit-scrollbar-thumb:hover {
+  background: #6c8c97;
+}
+
+#app main #main-wrapper #add-patient-sidebar {
+  height: 100%;
+  width: 400px;
+  -webkit-box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
+  color: #37465b;
+  position: absolute;
+  top: 0;
+  right: -400px;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+  background: #fcfcfc;
+  background: #ffffff;
+  overflow: auto;
+  z-index: 99;
+}
+
+#app main #main-wrapper #add-patient-sidebar-wrapper {
+  position: relative;
+  height: 100%;
+  padding: 1rem 1.5rem;
+}
+
+#app main #main-wrapper #add-patient-sidebar form {
+  padding-bottom: 100px;
+}
+
+#app main #main-wrapper #add-patient-sidebar .close-sidebar {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  fill: red;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+#app main #main-wrapper #add-patient-sidebar h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #49648b;
+}
+
+#app main #main-wrapper #add-patient-sidebar .form-group {
+  padding: 0.25rem 0;
+}
+
+#app main #main-wrapper #add-patient-sidebar label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 0.25rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  color: #384c69;
+  text-transform: uppercase;
+}
+
+#app main #main-wrapper #add-patient-sidebar input,
+#app main #main-wrapper #add-patient-sidebar select {
+  border: solid 2px #d4d4d4;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  background: #ffffff;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #37465b;
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* Hide arrow in price input field*/
+}
+
+#app main #main-wrapper #add-patient-sidebar input:hover,
+#app main #main-wrapper #add-patient-sidebar select:hover {
+  border-color: #4be7c8;
+}
+
+#app main #main-wrapper #add-patient-sidebar input:focus,
+#app main #main-wrapper #add-patient-sidebar select:focus {
+  outline: none;
+  border-color: #18b495;
+}
+
+#app main #main-wrapper #add-patient-sidebar input::-webkit-input-placeholder,
+#app main #main-wrapper #add-patient-sidebar select::-webkit-input-placeholder {
+  font-size: 0.75rem;
+  color: #a1a1a1;
+}
+
+#app main #main-wrapper #add-patient-sidebar input:-ms-input-placeholder,
+#app main #main-wrapper #add-patient-sidebar select:-ms-input-placeholder {
+  font-size: 0.75rem;
+  color: #a1a1a1;
+}
+
+#app main #main-wrapper #add-patient-sidebar input::-ms-input-placeholder,
+#app main #main-wrapper #add-patient-sidebar select::-ms-input-placeholder {
+  font-size: 0.75rem;
+  color: #a1a1a1;
+}
+
+#app main #main-wrapper #add-patient-sidebar input::placeholder,
+#app main #main-wrapper #add-patient-sidebar select::placeholder {
+  font-size: 0.75rem;
+  color: #a1a1a1;
+}
+
+#app main #main-wrapper #add-patient-sidebar input:-webkit-autofill, #app main #main-wrapper #add-patient-sidebar input:-webkit-autofill:hover, #app main #main-wrapper #add-patient-sidebar input:-webkit-autofill:focus, #app main #main-wrapper #add-patient-sidebar input:-webkit-autofill:active,
+#app main #main-wrapper #add-patient-sidebar select:-webkit-autofill,
+#app main #main-wrapper #add-patient-sidebar select:-webkit-autofill:hover,
+#app main #main-wrapper #add-patient-sidebar select:-webkit-autofill:focus,
+#app main #main-wrapper #add-patient-sidebar select:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #37465b !important;
+}
+
+#app main #main-wrapper #add-patient-sidebar input::-webkit-outer-spin-button, #app main #main-wrapper #add-patient-sidebar input::-webkit-inner-spin-button,
+#app main #main-wrapper #add-patient-sidebar select::-webkit-outer-spin-button,
+#app main #main-wrapper #add-patient-sidebar select::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+
+#app main #main-wrapper #add-patient-sidebar .amount-owing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app main #main-wrapper #add-patient-sidebar .amount-owing #dept-amount {
+  max-width: 0px;
+  margin-left: 0.75rem;
+  opacity: 0;
+}
+
+#app main #main-wrapper #add-patient-sidebar .amount-owing .switch ~ #dept-amount.shown {
+  max-width: 90px;
+  opacity: 1;
+}
+
+#app main #main-wrapper #add-patient-sidebar .select-med-panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 6fr 2fr 2fr;
+      grid-template-columns: 6fr 2fr 2fr;
+  grid-gap: 0.5rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+#app main #main-wrapper #add-patient-sidebar .select-med-panel * {
+  margin-bottom: 0;
+}
+
+#app main #main-wrapper #add-patient-sidebar .select-med-panel #price {
+  padding: 0.5rem 0.25rem;
+  font-size: 0.85rem;
+}
+
+#app main #main-wrapper #add-patient-sidebar .select-med-panel .add-med-btn button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background: #65828f;
+  color: #ffffff;
+  border-color: #65828f;
+  font-weight: 500;
+}
+
+#app main #main-wrapper #add-patient-sidebar .select-med-panel .add-med-btn button:hover {
+  background: #56717a;
+  border-color: #56717a;
+}
+
+#app main #main-wrapper #add-patient-sidebar .select-med-panel .add-med-btn button:focus {
+  background: #56717a;
+  border-color: #56717a;
+}
+
+#app main #main-wrapper #add-patient-sidebar .selected-med-title {
+  padding-top: 0.75rem;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine {
+  padding-top: 0.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid #d4d4d4 1px;
+  padding: 0.15rem 0.5rem 0.15rem 1rem;
+  margin-top: -1px;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine li .is-med-purchased {
+  outline: #18b495;
+  width: 20px;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine li .is-med-purchased:hover {
+  cursor: pointer;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine li .delete-med-btn {
+  font-size: 0.85rem;
+  color: red;
+}
+
+#app main #main-wrapper #add-patient-sidebar ul.selected-medicine li .delete-med-btn:hover {
+  cursor: pointer;
+}
+
+#app main #main-wrapper #add-patient-sidebar .total-cost {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 2rem;
+  background: #1ee1ba;
+  background: linear-gradient(136deg, #56717a 0%, #496069 100%);
+}
+
+#app main #main-wrapper #add-patient-sidebar .total-cost div {
+  padding: 0rem 2rem;
+  background: #d4d4d4;
+  color: #263448;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+#app main #main-wrapper #add-patient-sidebar .total-cost #submit-btn {
+  background: #18b495;
+  color: #f6f8f9;
+  border: none;
+  font-weight: 500;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+
+#app main #main-wrapper #add-patient-sidebar .total-cost #submit-btn:hover {
+  background: #0c5a4a;
+}
+
+#app main #main-wrapper #add-patient-sidebar .total-cost #submit-btn.update-patient-record {
+  background-color: orange !important;
+}
+/*# sourceMappingURL=style.css.map */

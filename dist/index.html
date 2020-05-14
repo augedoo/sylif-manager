@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>SYLif Manager | Patient Records</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Main Sidebar -->
+      <aside id="main-sidebar">
+        <div class="branding">
+          <h1>
+            SYLiF <br />
+            <span class="primary-text"> MANAGER</span>
+          </h1>
+        </div>
+
+        <ul>
+          <li>
+            <a href="#" title="Dashboard">
+              <div class="icon">
+                <span class="material-icons">
+                  dashboard
+                </span>
+              </div>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Sales">
+              <div class="icon">
+                <span class="material-icons">
+                  store
+                </span>
+              </div>
+              <span>Sales</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Patients Record" class="current">
+              <div class="icon">
+                <span class="material-icons">
+                  group
+                </span>
+              </div>
+              <span>Patients</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Medicine Stock">
+              <div class="icon">
+                <span class="material-icons">
+                  category
+                </span>
+              </div>
+              <span>Stock</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Financials">
+              <div class="icon">
+                <span class="material-icons">
+                  money
+                </span>
+              </div>
+              <span>Drawings</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <main>
+        <!-- Header -->
+        <header id="main-header">
+          <div class="wrapper">
+            <div class="hamburger">
+              <svg
+                id="hamburger"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    id="middle"
+                    d="M1 10C0 10 0 11.0602 0 12.0192C0 12.9782 0 13.9808 1 13.9808L23 13.9808C24 13.9808 24 13.0384 24 12.0192C24 11 24 10 23 10H1Z"
+                    fill="black"
+                  />
+                  <path
+                    id="bottom"
+                    d="M1 18C0 18 0 19.0602 0 20.0192C0 20.9782 0 21.9808 1 21.9808L23 21.9808C24 21.9808 24 21.0384 24 20.0192C24 19 24 18 23 18H1Z"
+                    fill="black"
+                  />
+                  <path
+                    id="top"
+                    d="M1 2C0 2 0 3.06017 0 4.01919C0 4.97821 0 5.98081 1 5.98081L23 5.98082C24 5.98082 24 5.03838 24 4.01919C24 3 24 2 23 2H1Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+            </div>
+
+            <div class="buttons">
+              <button class="btn add-record-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
+                </svg>
+                Add New Patient
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main-Content and Sidebar(Secondary) -->
+        <div id="main-wrapper">
+          <!-- Main Content -->
+          <div id="main-content">
+            <div id="top-panel">
+              <div class="page-title">
+                <h2>Patient Records</h2>
+              </div>
+
+              <div class="search-filter">
+                <div class="search">
+                  <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search..."
+                  />
+                  <div class="search-icon search-btn">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                    >
+                      <path
+                        d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="filter">
+                  <label for="filter-by">Sort by :</label>
+                  <select id="filter-by">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div id="patients-list">
+              <div class="wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>Date</td>
+                      <td>Name</td>
+                      <td>Mobile</td>
+                      <td>Medicine List</td>
+                      <td>Amount</td>
+                      <td>Dept</td>
+                      <td>Action</td>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aside new patient record sidebar -->
+          <aside id="add-patient-sidebar">
+            <div id="add-patient-sidebar-wrapper">
+              <svg
+                width="24"
+                height="24"
+                class="close-sidebar"
+                title="click to close the sidebar"
+              >
+                <path d="M11 11v-11h1v11h11v1h-11v11h-1v-11h-11v-1h11z" />
+              </svg>
+              <h2>Add New Patient Record</h2>
+              <form action="#">
+                <div class="form-group">
+                  <input type="text" id="name" placeholder="Name" />
+                </div>
+                <div class="form-group">
+                  <input type="tel" id="tel" placeholder="Mobile Number" />
+                </div>
+                <div class="form-group">
+                  <div class="medicine">
+                    <div class="select-med-panel">
+                      <div class="group">
+                        <label for="med-options">Medicine </label>
+                        <input
+                          type="text"
+                          list="medicine-list"
+                          id="medicine-input"
+                          class="medicine-input"
+                        />
+                        <datalist id="medicine-list"> </datalist>
+                      </div>
+                      <div class="group">
+                        <label for="price">Price</label>
+                        <input
+                          type="number"
+                          name="price"
+                          id="price"
+                          class="price-input"
+                        />
+                      </div>
+                      <div class="group">
+                        <div class="add-med-btn">
+                          <button type="button" class="btn">Add</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="group">
+                      <label for="is-purchased">Paid</label>
+                      <input
+                        type="checkbox"
+                        name="is-purchased"
+                        value="20"
+                        id="is-purchased"
+                      />
+                    </div> -->
+                    <div class="amount-owing">
+                      <!-- Rectangular switch -->
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider"></span>
+                      </label>
+
+                      <input
+                        type="number"
+                        id="dept-amount"
+                        value="0"
+                        placeholder="Amount"
+                      />
+                    </div>
+                    <label class="selected-med-title">Selected Medicines</label>
+                    <ul class="selected-medicine"></ul>
+                  </div>
+                </div>
+                <div class="total-cost">
+                  <div>GHC <span class="amount">0.0</span></div>
+                  <input
+                    type="button"
+                    class="btn"
+                    value="Add Patient Record"
+                    id="submit-btn"
+                  />
+                </div>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script src="scripts/patient.js"></script>
+    <script src="scripts/patientsDB.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
